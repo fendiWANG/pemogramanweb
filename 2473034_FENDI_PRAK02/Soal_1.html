@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Layout Fix Final</title>
+<style>
+    body{
+        background:#ddd;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        height:100vh;
+    }
+
+    table{
+        border-collapse:collapse;
+        width:550px;
+        height:550px;
+        background:black;
+        box-shadow:0 0 20px rgba(0,0,0,0.6);
+    }
+
+    td{
+        border:3px solid black;
+        text-align:center;
+        font-weight:bold;
+        font-size:22px;
+    }
+
+    .blue{ background:blue; }
+    .yellow{ background:yellow; }
+    .red{ background:red; }
+    .green{ background:lime; }
+    .black{ background:black; color:white; }
+</style>
+</head>
+<body>
+
+<table>
+
+    <!-- ROW 1 -->
+    <tr>
+        <td colspan="4" class="blue">A</td>
+        <td rowspan="4" class="yellow">D</td>
+    </tr>
+
+    <!-- ROW 2 -->
+    <tr>
+        <td rowspan="4" class="yellow">G</td>
+        <td colspan="2" class="red">B</td>
+        <td rowspan="2" class="green">C</td>
+    </tr>
+
+    <!-- ROW 3 -->
+    <tr>
+        <td rowspan="2" class="green">F</td>
+        <td class="black">X</td>
+    </tr>
+
+    <!-- ROW 4 -->
+    <tr>
+        <td colspan="2" class="red">E</td>
+    </tr>
+
+    <!-- ROW 5 (H FULL SAMPAI KANAN) -->
+    <tr>
+        <td colspan="5" class="blue">H</td>
+    </tr>
+
+</table>
+
+</body>
+</html>
