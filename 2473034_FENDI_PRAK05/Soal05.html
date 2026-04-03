@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Navbar Sesuai Soal</title>
+
+<style>
+
+body {
+    font-family: Arial;
+}
+
+.navbar {
+    margin: 50px;
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar ul li {
+    float: left;
+    margin-right: 3px;
+}
+
+.navbar ul li a {
+    display: block;
+    padding: 8px 25px;
+    border: 2px dotted grey;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+}
+
+.navbar ul li a:hover {
+    background: black;
+    color: white;
+}
+
+.navbar ul li ul {
+    display: none;
+    position: absolute;
+    margin-top: 0;
+    padding: 0;
+}
+
+.navbar ul li ul li {
+    float: none;
+    width: 120px;
+    border: 2px dotted grey;
+    text-align: center;
+}
+
+.navbar ul li ul li a {
+    padding: 8px;
+}
+
+.navbar ul li:hover ul {
+    display: block;
+}
+
+.clear {
+    clear: both;
+}
+
+</style>
+
+</head>
+<body>
+
+<div class="navbar">
+    <ul>
+        <li><a href="#">Home</a></li>
+
+        <li>
+            <a href="#">News</a>
+            <ul>
+                <li><a href="#">Sports</a></li>
+                <li><a href="#">Music</a></li>
+                <li><a href="#">Movie</a></li>
+            </ul>
+        </li>
+
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">About</a></li>
+    </ul>
+
+    <div class="clear"></div>
+</div>
+
+</body>
+</html>

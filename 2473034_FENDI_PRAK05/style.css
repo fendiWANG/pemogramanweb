@@ -1,0 +1,97 @@
+body {
+    font-family: Georgia, serif;
+    background: #fff;
+}
+
+.container {
+    width: 620px;
+    margin: auto;
+    border: 1px solid #999;
+}
+
+.header {
+    display: flex;
+}
+
+.logo {
+    width: 120px;
+    background: #e5e5e5;
+    text-align: center;
+    padding: 10px;
+}
+
+.banner {
+    width: 340px;
+    background: yellow;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+    padding: 10px;
+}
+
+.lion {
+    width: 160px;
+    background: url('lion.jpg') center/cover;
+}
+
+.main {
+    display: flex;
+}
+
+.sidebar {
+    width: 120px;
+    background: url('water.jpg') center/cover;
+    color: white;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 10px;
+}
+
+.sidebar li {
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.content {
+    width: 340px;
+    padding: 10px;
+}
+
+.content h2 {
+    color: #4169E1;
+    text-align: center;
+}
+
+.content p {
+    font-size: 14px;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+.right {
+    width: 160px;
+    padding: 10px;
+}
+
+.img {
+    height: 150px;
+    background: url('elephant.jpg') center/cover;
+    border: 1px solid #000;
+}
+
+.caption {
+    background: #4169E1;
+    color: white;
+    font-size: 12px;
+    padding: 5px;
+}
+
+.footer {
+    background: #4169E1;
+    color: white;
+    text-align: center;
+    font-size: 12px;
+    padding: 5px;
+}

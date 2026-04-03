@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mouse Over</title>
+    <style>
+        body {
+            background-color: #ddd;
+            text-align: center;
+        }
+
+        table {
+            margin: auto;
+        }
+
+        .box {
+            position: relative;
+            width: 250px;
+            height: 250px;
+        }
+
+        .box img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .corner {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border: 5px solid #FF0000;
+        }
+
+        .tl { top: 0; left: 0; border-right: none; border-bottom: none; }
+        .tr { top: 0; right: 0; border-left: none; border-bottom: none; }
+        .bl { bottom: 0; left: 0; border-right: none; border-top: none; }
+        .br { bottom: 0; right: 0; border-left: none; border-top: none; }
+
+        .box:hover .corner {
+            border-color: #FF00FF;
+        }
+
+        .arrow {
+            font-size: 28px;
+            font-weight: bold;
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+
+<table cellpadding="40">
+    <tr>
+        <td>
+            <a href="#">
+                <div class="box">
+                    <img src="binatang mario.png">
+                    <div class="corner tl"></div>
+                    <div class="corner tr"></div>
+                    <div class="corner bl"></div>
+                    <div class="corner br"></div>
+                </div>
+            </a>
+        </td>
+
+        <td class="arrow">
+        </td>
+
+        <td>
+            <a href="#">
+                <div class="box">
+                    <img src="binatang mario.png">
+                    <div class="corner tl"></div>
+                    <div class="corner tr"></div>
+                    <div class="corner bl"></div>
+                    <div class="corner br"></div>
+                </div>
+            </a>
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>

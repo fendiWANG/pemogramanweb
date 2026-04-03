@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lingkaran Tumpuk</title>
+    <style>
+        body {
+            background: white;
+            padding: 50px;
+        }
+
+        .container {
+            position: relative;
+            width: 500px;
+            height: 300px;
+        }
+
+        .circle {
+            position: absolute;
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+        }
+
+        .purple-base {
+            border: 10px solid purple;
+            left: 120px;
+            top: 50px;
+            z-index: 1;
+        }
+
+        .red-left {
+            border: 10px solid red;
+            left: 0;
+            top: 50px;
+            z-index: 2;
+        }
+
+        .red-right {
+            border: 10px solid red;
+            left: 240px;
+            top: 50px;
+            z-index: 2;
+        }
+
+        .purple-top {
+            border: 10px solid purple;
+            left: 120px;
+            top: 50px;
+            z-index: 3;
+            clip-path: inset(50% 0 0 0); /* tampilkan setengah bawah */
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <div class="purple-base circle"></div>
+    <div class="red-left circle"></div>
+    <div class="red-right circle"></div>
+    <div class="purple-top circle"></div>
+</div>
+
+</body>
+</html>
