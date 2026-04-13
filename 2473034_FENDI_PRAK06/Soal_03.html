@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Pyramid</title>
+
+<style>
+body{
+    font-family: Arial;
+    text-align: center;
+}
+
+/* kotak hasil */
+#container{
+    width: 800px;
+    height: 600px;
+    margin: 20px auto;
+    border: 3px solid #999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* tabel */
+table{
+    border-collapse: collapse;
+}
+
+/* kotak piramida */
+td{
+    width: 30px;
+    height: 30px;
+    border: 1px solid #fff;
+}
+
+/* warna isi */
+.block{
+    background: orange;
+}
+</style>
+
+</head>
+<body>
+
+<h3>Tinggi Piramida:
+<input type="text" id="tinggi">
+<button onclick="buatPiramida()">proses</button>
+</h3>
+
+<div id="container">
+    <table id="pyramid"></table>
+</div>
+
+<script>
+
+function buatPiramida(){
+
+    var tinggi = document.getElementById("tinggi").value;
+
+    if(isNaN(tinggi) || tinggi === ""){
+        alert("Masukkan angka!");
+        return;
+    }
+
+    tinggi = parseInt(tinggi);
+
+    var tabel = document.getElementById("pyramid");
+    tabel.innerHTML = ""; // reset
+
+    for(var i = 1; i <= tinggi; i++){
+
+        var row = "<tr>";
+
+        // spasi kiri
+        for(var j = 1; j <= tinggi - i; j++){
+            row += "<td></td>";
+        }
+
+        // isi piramida
+        for(var k = 1; k <= (2*i - 1); k++){
+            row += "<td class='block'></td>";
+        }
+
+        // spasi kanan (biar simetris)
+        for(var j = 1; j <= tinggi - i; j++){
+            row += "<td></td>";
+        }
+
+        row += "</tr>";
+
+        tabel.innerHTML += row;
+    }
+}
+
+</script>
+
+</body>
+</html>

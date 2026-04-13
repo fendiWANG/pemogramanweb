@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Aritmatic</title>
+
+<style>
+body{
+    font-family: Arial;
+}
+
+.container{
+    width: 320px;
+    padding: 15px;
+    border: 2px solid #999;
+    box-shadow: 3px 3px 5px rgba(0,0,0,0.3);
+}
+
+input{
+    width: 120px;
+    margin: 5px;
+}
+
+button{
+    margin: 5px 0;
+}
+
+table{
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+td{
+    border: 2px solid #333;
+    width: 60px;
+    height: 40px;
+    text-align: center;
+    font-size: 20px;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+<p>Angka Pertama : <input type="text" id="a"></p>
+<p>Angka Kedua : <input type="text" id="b"></p>
+
+<button onclick="hitung()">Count</button>
+
+<table>
+<tr>
+    <td id="a1"></td>
+    <td>+</td>
+    <td id="b1"></td>
+    <td>=</td>
+    <td id="hasil1"></td>
+</tr>
+
+<tr>
+    <td id="a2"></td>
+    <td>-</td>
+    <td id="b2"></td>
+    <td>=</td>
+    <td id="hasil2"></td>
+</tr>
+</table>
+
+</div>
+
+<script>
+function hitung(){
+
+    var a = document.getElementById("a").value;
+    var b = document.getElementById("b").value;
+
+    // validasi angka
+    if(isNaN(a) && isNaN(b)){
+        alert("angka pertama dan kedua harus angka.");
+        return;
+    }
+    if(isNaN(a)){
+        alert("angka pertama bukan angka.");
+        return;
+    }
+    if(isNaN(b)){
+        alert("angka kedua harus angka.");
+        return;
+    }
+
+    // ubah ke integer
+    a = parseInt(a);
+    b = parseInt(b);
+
+    // tampilkan ke tabel
+    document.getElementById("a1").innerHTML = a;
+    document.getElementById("b1").innerHTML = b;
+    document.getElementById("hasil1").innerHTML = a + b;
+
+    document.getElementById("a2").innerHTML = a;
+    document.getElementById("b2").innerHTML = b;
+    document.getElementById("hasil2").innerHTML = a - b;
+}
+</script>
+
+</body>
+</html>

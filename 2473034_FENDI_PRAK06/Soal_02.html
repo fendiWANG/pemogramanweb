@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Multiplication</title>
+
+<style>
+body{
+    font-family: Arial;
+}
+
+.container{
+    margin: 20px;
+}
+
+table{
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+td{
+    border: 2px solid black;
+    width: 45px;
+    height: 45px;
+    text-align: center;
+    font-size: 20px;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+<h3>Tabel Perkalian</h3>
+
+<table id="tabel"></table>
+</div>
+
+<script>
+
+// looping sampai user input angka
+var angka;
+
+while(true){
+    angka = prompt("A number?");
+
+    // jika cancel / kosong / bukan angka → ulang
+    if(angka === null || angka === "" || isNaN(angka)){
+        continue;
+    } else {
+        break;
+    }
+}
+
+// ubah ke integer
+angka = parseInt(angka);
+
+// ambil tabel
+var tabel = document.getElementById("tabel");
+
+// buat tabel 1 sampai 8
+for(var i = 1; i <= 8; i++){
+
+    var tr = document.createElement("tr");
+
+    var td1 = "<td>"+ i +"</td>";
+    var td2 = "<td>x</td>";
+    var td3 = "<td>"+ angka +"</td>";
+    var td4 = "<td>=</td>";
+    var td5 = "<td>"+ (i * angka) +"</td>";
+
+    tr.innerHTML = td1 + td2 + td3 + td4 + td5;
+
+    tabel.appendChild(tr);
+}
+
+</script>
+
+</body>
+</html>
