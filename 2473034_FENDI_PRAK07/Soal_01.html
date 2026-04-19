@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Character Counter</title>
+
+<style>
+body{
+    font-family: Arial;
+}
+
+.container{
+    width: 400px;
+    margin: 50px auto;
+    padding: 15px;
+    border: 2px solid #999;
+    box-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+}
+
+label{
+    display: inline-block;
+    width: 80px;
+}
+
+input{
+    width: 250px;
+    margin-bottom: 10px;
+}
+
+textarea{
+    width: 250px;
+    height: 100px;
+    resize: none;
+}
+
+.counter{
+    width: 70px;
+    text-align: center;
+    margin-top: 5px;
+    float: right;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+<p>
+<label>Judul</label> :
+<input type="text">
+</p>
+
+<p>
+<label>Deskripsi</label> :
+<textarea id="txt1" onkeyup="call_onKeyPress(this)"></textarea>
+</p>
+
+<input type="text" id="txt2" class="counter" value="0/256" readonly>
+
+<div style="clear: both;"></div>
+
+</div>
+
+<script>
+
+function call_onKeyPress(ob){
+
+    var obval = ob.value;
+
+    // batasi max 256 karakter
+    if(obval.length > 256){
+        ob.value = obval.substr(0,256);
+    }
+
+    // update counter
+    document.getElementById("txt2").value = ob.value.length + "/256";
+}
+
+</script>
+
+</body>
+</html>

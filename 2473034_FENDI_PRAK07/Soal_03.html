@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Form Array</title>
+
+<style>
+body{
+    font-family: Arial;
+}
+
+.container{
+    width: 350px;
+    margin: 50px auto;
+    padding: 15px;
+    border: 2px solid #999;
+    box-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+}
+
+input{
+    width: 200px;
+    margin: 5px;
+}
+
+button{
+    margin: 5px;
+}
+
+select{
+    margin: 5px;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+<p>
+Data : <input type="text" id="data">
+</p>
+
+<button onclick="addData()">Add</button>
+
+<select onchange="proses(this.value)">
+    <option value="">Pilih Operasi</option>
+    <option value="display">Display</option>
+    <option value="count">Count</option>
+    <option value="sum">Sum</option>
+    <option value="avg">Average</option>
+    <option value="max">Max</option>
+    <option value="min">Min</option>
+    <option value="ganjil">Ganjil</option>
+    <option value="genap">Genap</option>
+    <option value="hapus">Hapus</option>
+</select>
+
+<p>
+Hasil : <input type="text" id="hasil" readonly>
+</p>
+
+</div>
+
+<script>
+
+var arr = [];
+
+function addData(){
+
+    var val = document.getElementById("data").value;
+
+    if(isNaN(val) || val === ""){
+        alert("Masukkan angka!");
+        return;
+    }
+
+    arr.push(parseInt(val));
+
+    document.getElementById("data").value = ""; // kosongkan input
+}
+
+function proses(op){
+
+    if(arr.length == 0 && op !== "hapus"){
+        alert("Data kosong!");
+        return;
+    }
+
+    var hasil = "";
+
+    if(op === "display"){
+        hasil = arr.join(", ");
+    }
+
+    else if(op === "count"){
+        hasil = arr.length;
+    }
+
+    else if(op === "sum"){
+        var sum = 0;
+        for(var i=0;i<arr.length;i++){
+            sum += arr[i];
+        }
+        hasil = sum;
+    }
+
+    else if(op === "avg"){
+        var sum = 0;
+        for(var i=0;i<arr.length;i++){
+            sum += arr[i];
+        }
+        hasil = sum / arr.length;
+    }
+
+    else if(op === "max"){
+        var max = arr[0];
+        for(var i=1;i<arr.length;i++){
+            if(arr[i] > max) max = arr[i];
+        }
+        hasil = max;
+    }
+
+    else if(op === "min"){
+        var min = arr[0];
+        for(var i=1;i<arr.length;i++){
+            if(arr[i] < min) min = arr[i];
+        }
+        hasil = min;
+    }
+
+    else if(op === "ganjil"){
+        var ganjil = [];
+        for(var i=0;i<arr.length;i++){
+            if(arr[i] % 2 != 0){
+                ganjil.push(arr[i]);
+            }
+        }
+        hasil = ganjil.join(", ");
+    }
+
+    else if(op === "genap"){
+        var genap = [];
+        for(var i=0;i<arr.length;i++){
+            if(arr[i] % 2 == 0){
+                genap.push(arr[i]);
+            }
+        }
+        hasil = genap.join(", ");
+    }
+
+    else if(op === "hapus"){
+        arr = [];
+        hasil = "Data dihapus";
+    }
+
+    document.getElementById("hasil").value = hasil;
+}
+
+</script>
+
+</body>
+</html>

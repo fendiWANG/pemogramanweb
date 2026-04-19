@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Highlighted Table</title>
+
+<style>
+body{
+    font-family: Arial;
+}
+
+/* container biar mirip kotak */
+.container{
+    width: 420px;
+    margin: 50px auto;
+    padding: 10px;
+    border: 2px solid #ccc;
+    box-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+}
+
+/* tabel */
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* header */
+th{
+    background: #cfd8d3;
+    padding: 8px;
+    text-align: left;
+}
+
+/* baris warna */
+.c1{ background: #8fb1d9; }  /* biru */
+.c2{ background: #eab58d; }  /* orange */
+.c3{ background: #ccffaa; }  /* hijau hover */
+
+/* cell */
+td{
+    padding: 8px;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+<table>
+<tr>
+    <th>Position</th>
+    <th>Programming Language</th>
+    <th>Ratings</th>
+</tr>
+
+<tr class="c1" onmouseover="hover(this)" onmouseout="unhover(this,'c1')">
+    <td>1</td><td>C</td><td>18.058%</td>
+</tr>
+
+<tr class="c2" onmouseover="hover(this)" onmouseout="unhover(this,'c2')">
+    <td>2</td><td>Java</td><td>18.051%</td>
+</tr>
+
+<tr class="c1" onmouseover="hover(this)" onmouseout="unhover(this,'c1')">
+    <td>3</td><td>C++</td><td>9.707%</td>
+</tr>
+
+<tr class="c2" onmouseover="hover(this)" onmouseout="unhover(this,'c2')">
+    <td>4</td><td>PHP</td><td>9.662%</td>
+</tr>
+
+<tr class="c1" onmouseover="hover(this)" onmouseout="unhover(this,'c1')">
+    <td>5</td><td>(Visual) Basic</td><td>6.392%</td>
+</tr>
+
+</table>
+
+</div>
+
+<script>
+
+function hover(row){
+    row.className = "c3"; // jadi hijau
+}
+
+function unhover(row, warna){
+    row.className = warna; // balik semula
+}
+
+</script>
+
+</body>
+</html>
