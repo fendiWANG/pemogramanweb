@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkbox Table</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <style>
+        body{
+            font-family: Times New Roman, serif;
+            background: white;
+        }
+
+        .container{
+            width: 140px;
+            margin: 50px auto;
+            background: #efefef;
+            border: 1px solid #cfcfcf;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.35);
+            padding: 10px;
+        }
+
+        table{
+            border-collapse: collapse;
+            margin: auto;
+            background: #efefef;
+        }
+
+        td{
+            width: 70px;
+            text-align: center;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+
+        .headerArea{
+            border-bottom: 2px solid #444;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+        }
+
+        input[type=checkbox]{
+            width: 22px;
+            height: 22px;
+            margin: 8px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <table border="1" cellpadding="0" cellspacing="0">
+
+            <tr>
+                <td>
+
+                    <div class="headerArea">
+                        <input class="header" type="checkbox">
+                    </div>
+
+                    <input class="body" type="checkbox"><br>
+                    <input class="body" type="checkbox"><br>
+                    <input class="body" type="checkbox"><br>
+                    <input class="body" type="checkbox"><br>
+                    <input class="body" type="checkbox">
+
+                </td>
+            </tr>
+
+        </table>
+
+    </div>
+
+    <script>
+        $(document).ready(function(){
+
+            $(".header").change(function(){
+
+                var flag = $(this).prop("checked");
+
+                if(flag == true){
+
+                    $("input:checkbox.body").prop("checked", true);
+
+                }
+                else{
+
+                    $("input:checkbox.body").prop("checked", false);
+
+                }
+
+            });
+
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Colors</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background: white;
+        }
+
+        .container{
+            width: 540px;
+            margin: 50px auto;
+            background: #efefef;
+            border: 1px solid #cfcfcf;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.35);
+            padding: 10px;
+        }
+
+        button{
+            width: 155px;
+            height: 32px;
+            font-size: 16px;
+            margin-bottom: 10px;
+            margin-left: 2px;
+            cursor: pointer;
+            display: block;
+        }
+
+        .wrapper{
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .kotak{
+            width: 46px;
+            height: 46px;
+            border: 3px solid blue;
+            float: left;
+            margin-right: 10px;
+            background: white;
+        }
+
+        .merah{
+            background: red !important;
+        }
+
+        .kuning{
+            background: yellow;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <button id="btnWarna">Change colors</button>
+
+        <div class="wrapper">
+            <div class="kotak"></div>
+            <div class="kotak"></div>
+            <div class="kotak"></div>
+            <div class="kotak"></div>
+            <div class="kotak"></div>
+            <div class="kotak"></div>
+            <div class="kotak"></div>
+            <div class="kotak"></div>
+        </div>
+
+    </div>
+
+    <script>
+        $(document).ready(function(){
+
+            $(".kotak").click(function(){
+
+                $(".kotak").removeClass("merah");
+
+                $(this).addClass("merah");
+
+            });
+
+            $("#btnWarna").click(function(){
+
+                $(".kotak").each(function(index, domEle){
+
+                    if($(domEle).hasClass("merah")){
+                        return false;
+                    }
+
+                    $(domEle).addClass("kuning");
+
+                });
+
+            });
+
+        });
+    </script>
+
+</body>
+</html>

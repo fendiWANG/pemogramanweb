@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Hover jQuery</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background: white;
+        }
+
+        .container{
+            width: 540px;
+            height: 120px;
+            margin: 70px auto;
+            background: #efefef;
+            border: 1px solid #cfcfcf;
+            box-shadow: 0 0 10px rgba(0,0,0,0.4);
+            padding: 10px;
+        }
+
+        ol.menu{
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        ol.menu > li{
+            float: left;
+            width: 165px;
+            margin-right: 10px;
+            position: relative;
+        }
+
+        ol.menu > li > a{
+            display: block;
+            background: #ff2f92;
+            color: white;
+            text-decoration: underline;
+            font-size: 18px;
+            padding: 2px 6px;
+            font-weight: normal;
+        }
+
+        ol.menu li ol{
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            top: 26px;
+            left: 0;
+            width: 160px;
+            border: 3px solid #ff2f92;
+            background: white;
+        }
+
+        ol.menu li ol li a{
+            display: block;
+            color: #1a1a1a;
+            text-decoration: underline;
+            font-size: 18px;
+            padding: 0px 4px;
+            background: white;
+        }
+
+        ol.menu li ol li a:hover{
+            background: #f2f2f2;
+        }
+
+        .clear{
+            clear: both;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <ol class="menu">
+
+            <li class="item">
+                <a href="#">jQuery</a>
+
+                <ol>
+                    <li><a href="#">Download</a></li>
+                    <li><a href="#">Documentation</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ol>
+            </li>
+
+            <li class="item">
+                <a href="#">Community</a>
+
+                <ol>
+                    <li><a href="#">Mailing List</a></li>
+                    <li><a href="#">Tutorials</a></li>
+                    <li><a href="#">Demos</a></li>
+                    <li><a href="#">Plugins</a></li>
+                </ol>
+            </li>
+
+            <li class="item">
+                <a href="#">Development</a>
+
+                <ol>
+                    <li><a href="#">Source Code</a></li>
+                    <li><a href="#">Bug Tracking</a></li>
+                    <li><a href="#">Recent Changes</a></li>
+                </ol>
+            </li>
+
+        </ol>
+
+        <div class="clear"></div>
+
+    </div>
+
+    <script>
+        $(document).ready(function(){
+
+            $("li.item ol").hide();
+
+            $(".item").hover(
+                function(){
+                    $("li.item ol").hide();
+                    $(this).children("ol").show();
+                },
+                function(){
+                    $(this).children("ol").hide();
+                }
+            );
+
+        });
+    </script>
+
+</body>
+</html>

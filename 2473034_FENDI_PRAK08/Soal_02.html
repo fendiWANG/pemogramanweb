@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add & Search Name</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <style>
+        body{
+            font-family: Times New Roman, serif;
+            background: white;
+        }
+
+        .box{
+            width: 330px;
+            margin: 50px auto;
+            background: #efefef;
+            border: 1px solid #cfcfcf;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.35);
+            padding: 8px;
+        }
+
+        #txtNama{
+            width: 190px;
+            height: 24px;
+            font-size: 18px;
+            border: 1px solid #999;
+        }
+
+        button{
+            height: 28px;
+            font-size: 16px;
+            margin-left: 3px;
+            cursor: pointer;
+        }
+
+        #daftarNama{
+            margin-top: 6px;
+        }
+
+        #daftarNama div{
+            font-size: 18px;
+            line-height: 28px;
+        }
+
+        .garisbawah{
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+
+        <input type="text" id="txtNama">
+
+        <button id="btnAdd">Add</button>
+
+        <button id="btnSearch">Search</button>
+
+        <div id="daftarNama">
+            <div>John Resig</div>
+            <div>George Martin</div>
+            <div>Malcom John Sinclair</div>
+            <div>J. Ohn</div>
+        </div>
+
+    </div>
+
+    <script>
+        $(document).ready(function(){
+
+            $("#btnAdd").click(function(){
+
+                var nama = $("#txtNama").val();
+
+                if(nama != ""){
+                    $("#daftarNama").append("<div>" + nama + "</div>");
+                    $("#txtNama").val("");
+                }
+
+            });
+
+            $("#btnSearch").click(function(){
+
+                var cari = $("#txtNama").val();
+
+                $("#daftarNama div").removeClass("garisbawah");
+
+                $("#daftarNama div:contains('" + cari + "')").addClass("garisbawah");
+
+            });
+
+        });
+    </script>
+
+</body>
+</html>
